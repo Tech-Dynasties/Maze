@@ -156,10 +156,15 @@
             function updateRenderWorld() {
 
                 // Update ball position.
+                camera.rotation.set(Math.PI/2, 0, 0);
                 var stepX = wBall.GetPosition().x - ballMesh.position.x;
                 var stepY = wBall.GetPosition().y - ballMesh.position.y;
                 ballMesh.position.x += stepX;
+                camera.position.x += stepX ;
+               
                 ballMesh.position.y += stepY;
+                camera.position.y += stepY;
+                camera.position.z = 1.5; 
 
                 // Update ball rotation.
                 var tempMat = new THREE.Matrix4();
